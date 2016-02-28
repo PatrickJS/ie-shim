@@ -1,0 +1,31 @@
+{
+  "name": "ie-shim",
+  "version": "0.1.0",
+  "description": "ie-shim for Angular 2",
+  "main": "/dist/node.js",
+  "browser": "/dist/browser.js",
+  "scripts": {
+    "prebuild": "cp node_modules/angular2/ts/src/testing/shims_for_IE.js index.js",
+    "build": "npm run build:src && npm run build:min",
+    "build:src": "webpack --progress --display-error-details --display-reasons",
+    "build:min": "webpack --config webpack.config.min.js --progress --display-error-details --display-reasons --display-modules --display-chunks",
+    "bundle": "npm run build:src && npm run build:min ",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdi2290/ie-shim.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gdi2290/ie-shim/issues"
+  },
+  "homepage": "https://github.com/gdi2290/ie-shim#readme",
+  "devDependencies": {
+    "angular2": "^2.0.0-beta.7",
+    "merge-deep": "^2.0.2",
+    "object-assign": "^4.0.1",
+    "webpack": "^1.12.14"
+  }
+}
